@@ -1,19 +1,55 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Box, Container, Flex, Heading, SimpleGrid, Stat, StatLabel, StatNumber, Text, VStack } from "@chakra-ui/react";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
-    </Container>
+    <Box>
+      {/* Navigation Bar */}
+      <Flex
+        as="nav"
+        align="center"
+        justify="space-between"
+        wrap="wrap"
+        padding="1.5rem"
+        bg="blue.600"
+        color="white"
+      >
+        <Heading as="h1" size="lg" letterSpacing={"-.1rem"}>
+          Business Dashboard
+        </Heading>
+      </Flex>
+
+      {/* Main Section */}
+      <Container maxW="container.xl" py="12">
+        <Heading as="h2" size="lg" mb="6">
+          Key Metrics
+        </Heading>
+        <SimpleGrid columns={{ base: 1, md: 3 }} spacing="6">
+          <Stat>
+            <StatLabel>Sales</StatLabel>
+            <StatNumber>$10,000</StatNumber>
+            <Text>Feb 2023</Text>
+          </Stat>
+
+          <Stat>
+            <StatLabel>Revenue</StatLabel>
+            <StatNumber>$15,000</StatNumber>
+            <Text>Feb 2023</Text>
+          </Stat>
+
+          <Stat>
+            <StatLabel>Customer Count</StatLabel>
+            <StatNumber>500</StatNumber>
+            <Text>Feb 2023</Text>
+          </Stat>
+
+          <Stat>
+            <StatLabel>Average Order Value</StatLabel>
+            <StatNumber>$30</StatNumber>
+            <Text>Feb 2023</Text>
+          </Stat>
+        </SimpleGrid>
+      </Container>
+    </Box>
   );
 };
 
